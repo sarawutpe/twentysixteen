@@ -13,58 +13,60 @@
 
 </div><!-- .site-content -->
 
-<footer id="colophon" class="site-footer">
-	<?php if (has_nav_menu('primary')) : ?>
-		<nav class="main-navigation" aria-label="<?php esc_attr_e('Footer Primary Menu', 'twentysixteen'); ?>">
+<div class="footer-wrapper">
+	<footer id="colophon" class="site-footer">
+		<?php if (has_nav_menu('primary')) : ?>
+			<nav class="main-navigation" aria-label="<?php esc_attr_e('Footer Primary Menu', 'twentysixteen'); ?>">
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location' => 'primary',
+						'menu_class'     => 'primary-menu',
+					)
+				);
+				?>
+			</nav><!-- .main-navigation -->
+		<?php endif; ?>
+
+		<?php if (has_nav_menu('social')) : ?>
+			<nav class="social-navigation" aria-label="<?php esc_attr_e('Footer Social Links Menu', 'twentysixteen'); ?>">
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location' => 'social',
+						'menu_class'     => 'social-links-menu',
+						'depth'          => 1,
+						'link_before'    => '<span>',
+						'link_after'     => '</span>',
+					)
+				);
+				?>
+			</nav><!-- .social-navigation -->
+		<?php endif; ?>
+
+
+		<div class="site-info">
 			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'primary',
-					'menu_class'     => 'primary-menu',
-				)
-			);
+			/**
+			 * Fires before the twentysixteen footer text for footer customization.
+			 *
+			 * @since Twenty Sixteen 1.0
+			 */
+			do_action('twentysixteen_credits');
 			?>
-		</nav><!-- .main-navigation -->
-	<?php endif; ?>
+			<span class="site-title">Copyright © <?php echo date("Y"); ?> <a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></span>
 
-	<?php if (has_nav_menu('social')) : ?>
-		<nav class="social-navigation" aria-label="<?php esc_attr_e('Footer Social Links Menu', 'twentysixteen'); ?>">
 			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'social',
-					'menu_class'     => 'social-links-menu',
-					'depth'          => 1,
-					'link_before'    => '<span>',
-					'link_after'     => '</span>',
-				)
-			);
+			if (function_exists('the_privacy_policy_link')) {
+				the_privacy_policy_link('', '<span role="separator" aria-hidden="true"></span>');
+			}
 			?>
-		</nav><!-- .social-navigation -->
-	<?php endif; ?>
 
 
-	<div class="site-info">
-		<?php
-		/**
-		 * Fires before the twentysixteen footer text for footer customization.
-		 *
-		 * @since Twenty Sixteen 1.0
-		 */
-		do_action('twentysixteen_credits');
-		?>
-		<span class="site-title">Copyright © <?php echo date("Y"); ?> <a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></span>
+		</div><!-- .site-info -->
 
-		<?php
-		if (function_exists('the_privacy_policy_link')) {
-			the_privacy_policy_link('', '<span role="separator" aria-hidden="true"></span>');
-		}
-		?>
-
-
-	</div><!-- .site-info -->
-
-</footer><!-- .site-footer -->
+	</footer><!-- .site-footer -->
+</div><!-- .footer-wrapper -->
 </div><!-- .site-inner -->
 </div><!-- .site -->
 

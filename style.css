@@ -61,6 +61,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 :root {
   --primary: #007acc;
+  --content-size: 1100px;
 }
 
 @font-face {
@@ -887,7 +888,7 @@ a:active {
   -webkit-flex: 0 1 100%;
   -ms-flex: 0 1 100%;
   flex: 0 1 100%;
-  margin: 0.875em 0;
+  /* margin: 0.875em 0; */
 }
 
 .site-header-menu.toggled-on,
@@ -1011,8 +1012,9 @@ a:active {
 
 .social-navigation li {
   float: left;
-  margin: 0 0.4375em 0.4375em 0;
   padding: 0 0.875em;
+  display: flex;
+  align-items: center;
 }
 
 .social-navigation a {
@@ -1600,12 +1602,13 @@ blockquote:after,
 
 .site-inner {
   margin: 0 auto;
-  max-width: 1205px;
   position: relative;
 }
 
 .site-content {
   word-wrap: break-word;
+  max-width: var(--content-size);
+  margin: auto;
 }
 
 /* Do not show the outline on the skip link target. */
@@ -1630,10 +1633,12 @@ blockquote:after,
 
 .site-header {
   padding: 0 4.5455%;
+  background-color: #fff;
+  height: 70px;
+  margin-bottom: 14px;
 }
 
 .site-header-main {
-  /* background-color: #fff; */
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
@@ -1643,6 +1648,8 @@ blockquote:after,
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  max-width: var(--content-size);
+  margin: auto;
 }
 
 .site-branding {
@@ -2492,9 +2499,15 @@ body.search-no-results .page-header {
  * 11.6 - Footer
  */
 
+.footer-wrapper {
+  background-color: #fff;
+}
+
 .site-footer {
   text-align: center;
-  padding: 0 7.6923% 1.75em;
+  padding: 1.75em 0;
+  max-width: var(--content-size);
+  margin: auto;
 }
 
 .site-info {
@@ -2515,7 +2528,7 @@ body.search-no-results .page-header {
 
 .site-footer .site-title {
   font-family: inherit;
-  font-size: inherit;
+  font-size: 16px;
   font-weight: 400;
 }
 
@@ -2820,7 +2833,7 @@ p > video {
     scroll-padding-top: calc(var(--wp-admin--admin-bar--height, 0px) + 21px);
   }
 
-  body:not(.custom-background-image):before,
+  /* body:not(.custom-background-image):before,
   body:not(.custom-background-image):after {
     background: inherit;
     content: '';
@@ -2842,15 +2855,10 @@ p > video {
 
   body:not(.custom-background-image):after {
     bottom: 0;
-  }
+  } */
 
   .site-main {
     margin-bottom: 5.25em;
-  }
-
-  .site-branding {
-    margin-top: 1.3125em;
-    margin-bottom: 1.3125em;
   }
 
   .custom-logo {
@@ -2879,7 +2887,7 @@ p > video {
   }
 
   .site-header-menu {
-    margin: 1.3125em 0;
+    /* margin: 1.3125em 0; */
   }
 
   .site-header .main-navigation + .social-navigation {
@@ -3035,12 +3043,6 @@ p > video {
  */
 
 @media screen and (min-width: 56.875em) {
-  .site-header-main {
-    -webkit-align-items: flex-start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-  }
-
   .wp-custom-logo .site-header-main {
     -webkit-align-items: center;
     -ms-flex-align: center;
@@ -3174,7 +3176,7 @@ p > video {
   }
 
   .site-content {
-    padding: 0 4.5455%;
+    padding: 0;
   }
 
   .content-area {
@@ -3417,7 +3419,6 @@ p > video {
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    padding: 0 4.5455% 3.5em;
   }
 
   .site-footer .social-navigation {
@@ -3470,8 +3471,6 @@ p > video {
     margin-bottom: 7em;
   }
 
-  .site-branding,
-  .site-header-menu,
   .header-image {
     margin-top: 1.75em;
     margin-bottom: 1.75em;
@@ -3974,11 +3973,6 @@ p > video {
     max-width: none;
   }
 
-  .site-branding {
-    margin-top: 0;
-    margin-bottom: 1.75em;
-  }
-
   .site-main {
     margin-bottom: 3.5em;
   }
@@ -4041,7 +4035,6 @@ a .wp-block-latest-posts__post-title {
 .widget a {
   color: #1a1a1a;
   font-size: 1rem;
-  line-height: 1.5rem;
   font-weight: 300;
 }
 

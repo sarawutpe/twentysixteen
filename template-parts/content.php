@@ -28,6 +28,7 @@
 		<?php twentysixteen_entry_meta(); ?>
 	</footer>
 
+	<!-- edit -->
 	<?php
 	edit_post_link(
 		sprintf(
