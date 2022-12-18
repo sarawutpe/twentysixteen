@@ -153,3 +153,13 @@ Initial release
 == Notes ==
 
 Only the default and dark color schemes are accessibility ready.
+
+
+
+pages
+content.php //หน้าคอนเท้นหลัก
+
+content-single.php //หน้าด้านใน content detail
+
+single // ref คอนเท้น
+

@@ -1,8 +1,0 @@
-pages
-content.php //หน้าคอนเท้นหลัก
-
-content-single.php //หน้าด้านใน content detail
-
-
-
-#0c78a6
