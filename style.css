@@ -1663,10 +1663,10 @@ blockquote:after,
   position: relative;
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
-  padding: 24px;
+  padding: 15px;
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
   flex: 0 0 33.3333333333%;
-  max-width: 260px;
+  max-width: 240px;
 }
 
 .site-main .posts > article.content-single {
