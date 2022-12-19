@@ -2053,12 +2053,6 @@ body:not(.search-results) .entry-summary > :last-child,
   margin: 0 16px 16px 0;
 }
 
-body.error404 .page-header,
-body.search-no-results .page-header {
-  border-top: 0;
-  padding-top: 0;
-}
-
 .page-title {
   font-family: Arial, sans-serif;
   font-size: 23px;
