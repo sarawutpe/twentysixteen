@@ -72,7 +72,9 @@
 
 					$chiperRaw = openssl_encrypt($field_link, 'AES-256-ECB', $secert_hex, OPENSSL_RAW_DATA);
 					$encrypt_str = trim(base64_encode($chiperRaw));
-					echo '<button class="btn btn-primary" onclick="openLink(' . "'$encrypt_str'" . ');">' . $field_name . '</button>';
+					echo ('<button class="btn btn-primary download" onclick="openLink(' . "'$encrypt_str'" . ');">'
+						. $field_name .
+						'</button>');
 				}
 			}
 			echo '</div>';
@@ -89,6 +91,7 @@
 				})
 				const haveLink = decryptedphp.toString(CryptoJS.enc.Utf8)
 				if (haveLink != "") {
+					console.log(haveLink);
 					window.open(haveLink, '_blank');
 				}
 			}

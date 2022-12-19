@@ -3947,15 +3947,20 @@ a .wp-block-latest-posts__post-title {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   width: 100%;
   gap: 14px;
-  padding: 40px 0;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .download-link-wrapper .btn {
+  display: flex;
+  align-items: center;
   font-size: 1rem;
   line-height: 1.5rem;
+  gap: 6px;
+  padding: 0.375rem 1rem;
 }
 
 .btn {
@@ -3994,6 +3999,17 @@ a .wp-block-latest-posts__post-title {
   background-color: #1162c4;
   border-color: #105cb8;
   box-shadow: 0 0 0 0.25rem rgb(55 136 234 / 50%);
+}
+
+.download::before {
+  font-family: Genericons;
+  content: '\f50b';
+  font-size: 24px;
+  left: 0;
+  line-height: 24px;
+  position: relative;
+  color: #fff;
+  transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 a[rel='tag'] {
