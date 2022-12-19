@@ -16,38 +16,33 @@
 
 	<?php twentysixteen_post_thumbnail(); ?>
 
-	<?php twentysixteen_excerpt(); ?>
-
 	<?php if ('post' === get_post_type()) : ?>
 
 		<footer class="entry-footer">
-			<?php twentysixteen_entry_meta(); ?>
 			<?php
-			edit_post_link(
-				sprintf(
-					/* translators: %s: Post title. Only visible to screen readers. */
-					__('Edit<span class="screen-reader-text"> "%s"</span>', 'twentysixteen'),
-					get_the_title()
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
+			if (in_array(get_post_type(), array('post', 'attachment'), true)) {
+				twentysixteen_entry_date();
+			}
 			?>
-		</footer><!-- .entry-footer -->
+		</footer>
 
-	<?php else : ?>
-
+		<!-- edit -->
 		<?php
 		edit_post_link(
 			sprintf(
-				/* translators: %s: Post title. Only visible to screen readers. */
 				__('Edit<span class="screen-reader-text"> "%s"</span>', 'twentysixteen'),
 				get_the_title()
 			),
-			'<footer class="entry-footer"><span class="edit-link">',
-			'</span></footer><!-- .entry-footer -->'
+			'<span class="edit-link">',
+			'</span>'
 		);
 		?>
 
+
 	<?php endif; ?>
-</article><!-- #post-<?php the_ID(); ?> -->
+
+
+</article>
+
+
+<!-- #post-<?php the_ID(); ?> -->

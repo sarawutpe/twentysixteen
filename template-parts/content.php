@@ -9,7 +9,6 @@
  */
 ?>
 
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<?php twentysixteen_post_thumbnail(); ?>
@@ -25,7 +24,11 @@
 	<?php twentysixteen_excerpt(); ?>
 
 	<footer class="entry-footer">
-		<?php twentysixteen_entry_meta(); ?>
+		<?php
+		if (in_array(get_post_type(), array('post', 'attachment'), true)) {
+			twentysixteen_entry_date();
+		}
+		?>
 	</footer>
 
 	<!-- edit -->
@@ -42,5 +45,3 @@
 
 	<!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
-
-<!-- <div class="clear"></div> -->
