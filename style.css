@@ -61,7 +61,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 :root {
   --primary: #007acc;
-  --content-size: 1104px;
+  --content-size: 1000px;
 }
 
 html {
@@ -779,6 +779,8 @@ a:active {
   -webkit-flex: 0 1 100%;
   -ms-flex: 0 1 100%;
   flex: 0 1 100%;
+  background-color: #fff;
+  z-index: 10;
   /* margin: 0.875em 0; */
 }
 
@@ -1335,7 +1337,7 @@ blockquote:after,
 
 .widget {
   background-color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 3.5em;
+  margin-bottom: 1em;
   padding: 24px 16px;
   border-radius: 10px;
 }
@@ -1496,11 +1498,15 @@ blockquote:after,
   min-height: 100vh;
 }
 
+/* TODO */
 .site-content {
-  word-wrap: break-word;
   max-width: var(--content-size);
+  display: flex;
+  flex-direction: column;
+  /* word-wrap: break-word; */
   margin: 0 auto;
   flex: 1 auto;
+  padding: 0 4px;
 }
 
 /* Do not show the outline on the skip link target. */
@@ -1649,11 +1655,8 @@ blockquote:after,
 
 /* TODO */
 .posts {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 2.5em;
-  gap: 16px;
-  min-width: 828px;
+  display: block;
+  margin-bottom: 1em;
 }
 
 .site-main .posts > article {
@@ -1666,7 +1669,9 @@ blockquote:after,
   padding: 15px;
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
   flex: 0 0 33.3333333333%;
-  max-width: 240px;
+  max-width: 100%;
+  margin-right: 0;
+  margin-bottom: 16px;
 }
 
 .site-main .posts > article.content-single {
@@ -1681,7 +1686,6 @@ blockquote:after,
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.14);
 }
 
-.entry-header,
 .entry-summary,
 .entry-content,
 .entry-footer,
@@ -2399,8 +2403,9 @@ body:not(.search-results) .entry-summary > :last-child,
  */
 
 .sidebar {
+  width: 100%;
   margin-bottom: 3.5em;
-  padding: 0 7.6923%;
+  /* padding: 0 7.6923%; */
 }
 
 /**
@@ -2408,7 +2413,7 @@ body:not(.search-results) .entry-summary > :last-child,
  */
 
 .footer-wrapper {
-  /* position: relative; */
+  position: relative;
   background-color: rgba(255, 255, 255, 0.8);
   box-shadow: inset 0px 1px 1px #ddd;
 }
@@ -2742,6 +2747,22 @@ p > video {
 }
 
 /**
+ * Custom - >= 710px
+ */
+
+@media screen and (min-width: 36em) {
+  .posts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .posts.single {
+    display: block;
+  }
+}
+
+/**
  * 14.1 - >= 710px
  */
 
@@ -2811,6 +2832,10 @@ p > video {
     margin: 1.3125em 0;
   }
 
+  .site-main .posts > article {
+    max-width: 234px;
+  }
+
   .post-navigation {
     margin-bottom: 5.25em;
   }
@@ -2828,19 +2853,6 @@ p > video {
 
   .pagination .page-numbers {
     display: inline-flex;
-  }
-
-  .entry-header,
-  .post-thumbnail,
-  .entry-content,
-  .entry-summary,
-  .entry-footer,
-  .comments-area,
-  .image-navigation,
-  .post-navigation,
-  .page-content,
-  .content-bottom-widgets {
-    margin-right: 23.0769%;
   }
 
   .entry-content blockquote.alignleft,
@@ -2916,7 +2928,6 @@ p > video {
     margin-bottom: 5.25em;
   }
 
-  .sidebar,
   .widecolumn {
     margin-bottom: 5.25em;
     padding-right: 23.0769%;
@@ -2959,6 +2970,14 @@ p > video {
     -webkit-flex: 0 1 auto;
     -ms-flex: 0 1 auto;
     flex: 0 1 auto;
+  }
+
+  .posts {
+    gap: 0;
+  }
+
+  .site-main .posts > article {
+    margin-right: 16px;
   }
 
   .main-navigation {
@@ -3081,12 +3100,13 @@ p > video {
   }
 
   .site-content {
+    flex-direction: row;
     padding: 0;
   }
 
   .content-area {
-    float: left;
-    margin-right: -100%;
+    /* float: left; */
+    /* margin-right: -100%; */
     width: 75%;
   }
 
@@ -3104,10 +3124,8 @@ p > video {
     margin-left: 0;
   }
 
+  /* TODO */
   .sidebar {
-    float: left;
-    margin-left: 75%;
-    padding: 0;
     width: 25%;
   }
 
@@ -3115,7 +3133,8 @@ p > video {
     font-size: 13px;
     font-size: 0.8125rem;
     line-height: 1.6153846154;
-    margin-bottom: 1.8em;
+    margin-bottom: 3.5em;
+    padding: 24px 16px;
     padding-top: 1.615384615em;
   }
 

@@ -8,7 +8,7 @@
  * @since Twenty Sixteen 1.0
  */
 ?>
-<div class="posts">
+<div class="posts single">
 	<article id="post-<?php the_ID(); ?>" <?php post_class('content-single'); ?>>
 		<!-- Breadcrumb -->
 		<?php if (function_exists('yoast_breadcrumb')) {
