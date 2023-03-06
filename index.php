@@ -19,6 +19,7 @@ get_header(); ?>
 
 <div id="primary" class="content-area">
 	<main id="main" class="site-main">
+
 		<!-- Posts -->
 		<div class="posts">
 			<?php if (have_posts()) : ?>
@@ -39,13 +40,15 @@ get_header(); ?>
 				// End the loop.
 				endwhile;
 
-			// If no content, include the "No posts found" template.
-			else :
-				get_template_part('template-parts/content', 'none');
-
 			endif;
 			?>
+
 		</div>
+
+		<!-- If no content, include the "No posts found" template. -->
+		<?php if (!have_posts()) : ?>
+			<?php get_template_part('template-parts/content', 'none'); ?>
+		<?php endif; ?>
 
 		<!-- Pagination -->
 		<?php the_posts_pagination(array('prev_text' => '', 'next_text' => '')); ?>
