@@ -120,4 +120,5 @@
 				?>
 			</header><!-- .site-header -->
 
+			<div class="site-content-wrapper">
 			<div id="content" class="site-content">

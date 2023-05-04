@@ -11,7 +11,8 @@
  */
 ?>
 
-</div><!-- .site-content -->
+	</div><!-- .site-content -->
+</div>
 
 <div class="footer-wrapper">
 	<footer id="colophon" class="site-footer">

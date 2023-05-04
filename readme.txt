@@ -154,9 +154,3 @@ Initial release
 
 Only the default and dark color schemes are accessibility ready.
 
-== Custom Theme ==
-pages
-content.php //หน้าคอนเท้นต์หลัก
-content-single.php // แสดงคอนเท้นต์ single content
-content-search.php // แสดงค้อนเท้นต์ search
-archive.php // แสดงค้อนเท้นต์ tag
