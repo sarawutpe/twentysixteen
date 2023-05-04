@@ -3129,8 +3129,8 @@ p > video {
 
   .content-area {
     /* float: left; */
-    /* margin-right: -100%; */
-    width: 75%;
+    /* margin-right: 16px; */
+    /* width: 75%; */
   }
 
   .entry-header,

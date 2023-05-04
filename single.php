@@ -32,6 +32,8 @@ get_header(); ?>
 						'prev_text' => _x('<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'twentysixteen'),
 					)
 				);
+			} elseif (is_singular('post')) {
+				// Previous/next post navigation.
 			}
 
 		// End the loop.
